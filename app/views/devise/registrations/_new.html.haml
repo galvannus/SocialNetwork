@@ -1,0 +1,26 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+	= devise_error_messages!
+	.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+		= f.label :username,class: "mdl-textfield__label grey-text",:for => "sample1"
+		= f.text_field :username, autocomplete: "username",class: "mdl-textfield__input",:id => "sample3",:type => "text"
+	.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+		= f.label :name,class: "mdl-textfield__label grey-text"
+		= f.text_field :name, autocomplete: "username",class: "mdl-textfield__input"
+	.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+		= f.label :last_name,class: "mdl-textfield__label grey-text"
+		= f.text_field :last_name, autocomplete: "username",class: "mdl-textfield__input"
+	.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+		= f.label :email,class: "mdl-textfield__label grey-text"
+		= f.email_field :email, autocomplete: "username",class: "mdl-textfield__input"
+	.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+		= f.label :password,class: "mdl-textfield__label grey-text"
+		= f.password_field :password, autocomplete: "username",class: "mdl-textfield__input"
+	.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+		= f.label :password_confirmation,class: "mdl-textfield__label grey-text"
+		= f.password_field :password_confirmation, autocomplete: "username",class: "mdl-textfield__input"
+	.top-space
+		.row.middle-xs
+			=grid xs:12, md:6 do
+				=f.submit "Registrar",class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+			=grid xs:12, md:6 do
+				=link_to "Ya tengo cuenta", new_user_session_path,class: "white-text underline"

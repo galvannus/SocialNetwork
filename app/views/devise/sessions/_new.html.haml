@@ -1,0 +1,15 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+	.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+		= f.label :email,class: "mdl-textfield__label grey-text",:for => "sample1"
+		= f.email_field :email, autofocus: true, autocomplete: "email",class: "mdl-textfield__input",:id => "sample3",:type => "text"
+	.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+		= f.label :password,class: "mdl-textfield__label grey-text"
+		= f.password_field :password, autocomplete: "off",class: "mdl-textfield__input"
+	-if devise_mapping.rememberable?
+		%p.no-margin
+			= f.check_box :remember_me
+			= f.label :remember_me
+	.top-space
+		.row.middle-xs
+			=grid xs:12, md:6 do
+				=f.submit "Iniciar sesión",class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
