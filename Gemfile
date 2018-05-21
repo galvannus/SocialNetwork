@@ -33,6 +33,10 @@ gem 'devise'
 gem 'haml-rails'
 gem 'flexbox_rb'
 gem 'jquery-rails'
+
+gem "jquery-ui-rails"
+#Best in place
+gem 'best_in_place', '~> 3.0.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
