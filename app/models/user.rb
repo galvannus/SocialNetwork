@@ -11,6 +11,12 @@ class User < ApplicationRecord
 	#Relations
 	has_many :posts
 
+	has_attached_file :avatar, styles: { medium: "300x300", thumb: "100x100"}, default_url: "/images/:style/missing.jpg"
+	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+	has_attached_file :cover, styles: {medium: "800x600", thumb: "400x300"}, default_url: "/images/:style/missing_cover.jpg"
+	validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
+
 	private
 		#verify username 
 		def validate_username_regex

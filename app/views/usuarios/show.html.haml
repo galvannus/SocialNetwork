@@ -1,12 +1,15 @@
 .row.center-xs
 	=grid xs:10,sm:8,md:6,lg:4 do
 		.white.mdl-shadow--2dp.top-space.relative
-			/Cover User
+			.big-padding.white-text.text-left-.cover.relative{style: "background-image:url(#{@user.cover.url(:medium)})"}
+				=render "usuarios/menu_avatar"
+				.top-space
+					=circle_img @user.avatar.url(:medium),100
 			%section.border-bottom.top-space
 				.row.middle-xs
 					=grid class:"col-xs" do
 						%h1.no-margin.medium
-						%spane= best_in_place_if current_user == @user, @user, :name
+						%span= best_in_place_if current_user == @user, @user, :name
 						%span= best_in_place_if current_user == @user, @user, :last_name
 					=grid xs:4,sm:2 do
 						/Aqui algo
@@ -20,3 +23,10 @@
 				.row.center-xs
 					=grid xs:8,md:10 do
 						%span= best_in_place_if current_user == @user, @user, :username
+			.top-space
+				=form_for @user do |f|
+					%div{style: "display: none;"}
+						=f.file_field :avatar
+						=f.file_field :cover
+					.top-space
+						=f.submit "Enviar"

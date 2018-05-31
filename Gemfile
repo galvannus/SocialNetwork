@@ -37,6 +37,9 @@ gem 'jquery-rails'
 gem "jquery-ui-rails"
 #Best in place
 gem 'best_in_place', '~> 3.0.1'
+#Perperclip
+gem "paperclip", "~> 6.0.0"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
